@@ -11,12 +11,12 @@ class MacrosFinderTester : public CppUnit::TestCase
 	public:
 		void TestFindMacros() 
 		{
-		    const char* ErrorMessage = "MacrosFinder::FindMacros (arg == stdin) : 'NORM\_nNOT NORM\_nFALSE' expected";
+		    const char* ErrorMessage = "MacrosFinder::FindMacros (arg == stdin) : 'NORMcrNOT NORMcrTRUE' expected";
 		    
 		    MacrosFinder Finder;
 		    string List = Finder.FindMacros();
-		    string ExpectedList = "NORM\nNOT NORM\nFALSE";
-		   
+		    string ExpectedList = "NORM\nNOT_NORM\nTRUE";
+		    
 		    CPPUNIT_ASSERT_MESSAGE(ErrorMessage, List == ExpectedList);
 		};
 		
